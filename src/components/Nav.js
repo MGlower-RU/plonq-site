@@ -11,8 +11,8 @@ export default function Nav() {
     if(!e.target.closest('.nav__menu__item--extra-menu')) {
       document.querySelectorAll('.nav__menu__item--extra-menu a')
       .forEach(el => el.classList.remove('active'))
-      document.querySelector(`.nav__menu__item > a[href="${pathname}"]`)
-      .classList.add('active');
+      const activeNavItem = document.querySelector(`.nav__menu__item > a[href="${pathname}"]`)
+      if(activeNavItem) activeNavItem.classList.add('active')
     }
   }
 
@@ -39,7 +39,7 @@ export default function Nav() {
           <NavLink to="/application">Приложение</NavLink>
         </li>
         <li className='nav__menu__item nav__menu__item--extra-menu'>
-          <a href="/" onClick={openExtraMenu}>Дистрибуция</a>
+          <NavLink to="/distribution" onClick={openExtraMenu}>Дистрибуция</NavLink>
           <ul className="nav__extra__menu">
             <li className='nav__menu__item'>
               <NavLink to="/contact-us">Связаться с нами</NavLink>
