@@ -7,6 +7,7 @@
   min-height: 6.4rem;
   background-color: #FFFFFF;
   padding: var(--padding);
+  z-index: 100;
 }
 
 .nav__logo__pin {
@@ -54,6 +55,30 @@
     &:hover {
       color: rgb(200, 187, 147);
       transition: color .24s ease-in-out;
+    }
+  }
+}
+
+.nav__menu__item--extra-menu {
+  a + .nav__extra__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    justify-content: flex-end;
+    width: 100%;
+    height: 6.4rem;
+    padding: var(--padding);
+    gap: 9.1rem;
+    background-color: #FFFFFF;
+    box-shadow: 0 1.5rem 1.3rem -1.5rem rgba(#000000, .03);
+  }
+
+  a.active {
+    color: rgb(200, 187, 147);
+
+    & + .nav__extra__menu {
+      display: flex;
     }
   }
 }
