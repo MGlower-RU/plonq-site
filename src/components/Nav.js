@@ -23,6 +23,11 @@ export default function Nav() {
     e.target.classList.add('active')
   }
 
+  function openMenu(e) {
+    e.preventDefault();
+    e.target.closest('a').classList.toggle('nav__mobile-menu--opened')
+  }
+
   return (
     <nav className="nav">
       <div className="nav__logo__pin">
@@ -31,6 +36,11 @@ export default function Nav() {
       <NavLink to="/" className="nav__logo">
         <img src={Logo} alt="" />
       </NavLink>
+      <a href="/" className='nav__mobile-menu' onClick={openMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
       <ul className='nav__menu'>
         <li className='nav__menu__item'>
           <NavLink to="/products">Продукты</NavLink>
