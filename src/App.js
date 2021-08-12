@@ -1,7 +1,12 @@
-import './styles/App.scss';
+import React from 'react';
+
 import { BrowserRouter as Router } from 'react-router-dom';
+
+import './styles/App.scss';
+
 import Nav from './components/Nav';
 import PageSwitch from './components/PageSwitch';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -9,8 +14,8 @@ export default function App() {
       <Router>
         <Nav />
         <PageSwitch />
+        <Footer />
       </Router>
-      {/* Footer */}
     </div>
   );
 }
