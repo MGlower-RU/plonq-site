@@ -1,9 +1,13 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Plonq400 from '../pages/Plonq400';
 
 export default function PageSwitch() {
   return (
     <Switch>
+      <Route exact path="/">
+        <h1>Главная</h1>
+      </Route>
       <Route path="/products">
         <h1>Продукты</h1>
       </Route>
@@ -28,8 +32,14 @@ export default function PageSwitch() {
       <Route path="/policy">
         <h1>Политика конфиденциальности</h1>
       </Route>
-      <Route path="/">
-        <h1>Главная</h1>
+      <Route path="/plonq400">
+        <Plonq400 />
+      </Route>
+      <Route path="/page404">
+        <h1>404 page</h1>
+      </Route>
+      <Route path="*">
+        <Redirect to="page404" />
       </Route>
     </Switch>
   )
