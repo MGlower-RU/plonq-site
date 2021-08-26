@@ -1,0 +1,143 @@
+.wholesale-buyers__wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 92.8rem;
+  width: 100%;
+  margin: 27rem auto 30.4rem;
+}
+
+.wholesale-buyers__text {
+  max-width: 45.6rem;
+  width: 100%;
+
+  h2 {
+    font-weight: 400;
+    font-size: 2.3rem;
+    line-height: 2.8rem;
+    margin-bottom: 3.4rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+    line-height: 2.1rem;
+    color: rgb(196, 196, 196);
+
+    &:not(:last-of-type) {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.wholesale-buyers__list {
+  margin-bottom: 4rem;
+  max-width: 42.4rem;
+
+  li {
+    position: relative;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+    padding-left: 2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: .65rem;
+      left: .85rem;
+      background-color: #000000;
+      border-radius: 50%;
+      width: .3rem;
+      height: .3rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1.8rem;
+    }
+  }
+}
+
+@media(max-width: 960px) {
+  .wholesale-buyers__wrapper {
+    flex-direction: column;
+    max-width: 38.4rem;
+    margin: 17rem auto 19.4rem;
+  }
+
+  .wholesale-buyers__text {
+    max-width: none;
+    margin-bottom: 6.5rem;
+  
+    h2 {
+      line-height: 3.3rem;
+      margin-bottom: 3.1rem;
+    }
+  
+    p {  
+      &:not(:last-of-type) {
+        margin-bottom: 2.1rem;
+      }
+    }
+  }
+  
+  .wholesale-buyers__list {
+    margin-bottom: 2.5rem;
+    max-width: none;
+  }
+}
+
+@media(max-width: 768px) {
+  .wholesale-buyers__wrapper {
+    margin: 23.4rem auto 19.4rem;
+  }
+}
+
+@media(max-width: 425px) {
+  .wholesale-buyers__wrapper {
+    max-width: 27.2rem;
+    margin: 11rem auto 11.4rem;
+  }
+
+  .wholesale-buyers__text {
+    margin-bottom: 6.4rem;
+  
+    h2 {
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      margin-bottom: 2.5rem;
+    }
+  
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+
+      &:not(:last-of-type) {
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+  
+  .wholesale-buyers__list {
+    li {
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+      padding-left: 1.6rem;
+      text-transform: none;
+  
+      &::before {
+        top: .65rem;
+        left: .6rem;
+      }
+  
+      &:not(:last-child) {
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+}
+
+@media(max-width: 375px) {
+  .wholesale-buyers__wrapper {
+    margin: 15rem auto 11.4rem;
+  }
+}

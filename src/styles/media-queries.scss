@@ -183,53 +183,6 @@
     }
   }
 
-  .plonq400__wrapper {
-    flex-direction: column;
-    margin: 14.5rem 0 24.9rem;
-  }
-
-  .plonq400__explanation-text {
-    font-size: 2.3rem;
-    line-height: 3.6rem;
-    font-weight: 400;
-    margin-top: 2.1rem;
-    text-align: center;
-  }
-  
-  .plonq400__img {
-    max-width: 67.2rem;
-    max-height: 47.5rem;
-    overflow: hidden;
-
-    img {
-      object-fit: cover;
-    }
-  }
-
-  .plonq400__suggestion-product {
-    margin-top: 2.1rem;
-
-    span {
-      margin-right: 1.9rem;
-    }
-  }
-
-  .plonq400__logo {
-    gap: 1.8rem;
-    max-height: 3.2rem;
-  }
-  
-  .plonq400__logo__text {
-    width: 13.7rem;
-    height: 3rem;
-  }
-  
-  .plonq400__logo__model {
-    width: 6rem;
-    height: 3.2rem;
-    object-fit: contain;
-  }
-
   .footer__features {
     align-items: center;
     justify-content: space-between;
@@ -346,11 +299,30 @@
     margin: 4rem 0 5rem;
     font-size: 1.1rem;
   }
+
+  @keyframes shining {
+    0%{
+      background: linear-gradient(45deg, rgba(#202020, .3) 0% 15%, transparent 35% 100%);
+    }
+    25%{
+      background: linear-gradient(45deg, transparent 0 25%, rgba(#202020, .3) 35% 50%, transparent 60% 100%);
+    }
+    50%{
+      background: linear-gradient(45deg, transparent 0 40%, rgba(#202020, .3) 55% 70%, transparent 90% 100%);
+    }
+    100%{
+      background: linear-gradient(45deg, transparent 0 90%, rgba(#202020, .3) 95% 100%);
+    }
+  }
 }
 
 @media(max-width: 768px) {
   body {
     --padding: 0 8rem;
+  }
+
+  .nav {
+    position: fixed;
   }
 
   .nav__menu {
@@ -531,47 +503,6 @@
   .nav__mobile-menu {
     height: 1.5rem;
     width: 1.4rem;
-  }
-
-  .plonq400__wrapper {
-    margin: 7.765rem 0 9.4rem;
-  }
-
-  .plonq400__explanation-text {
-    font-size: 2rem;
-    line-height: 2.8rem;
-    font-weight: 300;
-    margin-top: 2.6rem;
-  }
-  
-  .plonq400__img {
-    max-width: none;
-    max-height: 30.3rem;
-  }
-
-  .plonq400__suggestion-product {
-    margin-top: .4rem;
-
-    span {
-      font-size: 1.2rem;
-      line-height: 2.1rem;
-      margin-right: 3.264rem;
-    }
-  }
-
-  .plonq400__logo {
-    gap: .646rem;
-    max-height: 2.5rem;
-  }
-  
-  .plonq400__logo__text {
-    width: 11rem;
-    height: 2.347rem;
-  }
-  
-  .plonq400__logo__model {
-    width: 4.7rem;
-    height: 2.5rem;
   }
 
   .footer__email__subscription__text {

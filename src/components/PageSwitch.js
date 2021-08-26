@@ -1,15 +1,22 @@
 import React from 'react';
+
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Plonq400 from '../pages/Plonq400';
+import ContactUs from '../pages/ContactUs';
+
+import Main from '../pages/Main';
+import Plonq500 from '../pages/Plonq500';
+import ProductionOut from '../pages/ProductionOut';
+import Products from '../pages/Products';
+import WholesaleBuyers from '../pages/WholesaleBuyers';
 
 export default function PageSwitch() {
   return (
     <Switch>
       <Route exact path="/">
-        <h1>Главная</h1>
+        <Main />
       </Route>
       <Route path="/products">
-        <h1>Продукты</h1>
+        <Products />
       </Route>
       <Route path="/application">
         <h1>Приложение</h1>
@@ -18,10 +25,10 @@ export default function PageSwitch() {
         <h1>Где купить?</h1>
       </Route>
       <Route path="/contact-us">
-        <h1>Связаться с нами</h1>
+        <ContactUs />
       </Route>
       <Route path="/wholesale-customers">
-        <h1>Оптовым покупателям</h1>
+        <WholesaleBuyers />
       </Route>
       <Route path="/refund">
         <h1>Условия возврата</h1>
@@ -33,7 +40,10 @@ export default function PageSwitch() {
         <h1>Политика конфиденциальности</h1>
       </Route>
       <Route path="/plonq400">
-        <Plonq400 />
+        <ProductionOut goTo={'Plonq 500'} />
+      </Route>
+      <Route path="/plonq500">
+        <Plonq500 />
       </Route>
       <Route path="/page404">
         <h1>404 page</h1>

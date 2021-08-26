@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
 import { NavLink, useLocation } from 'react-router-dom';
+import { PageContext } from './Context';
 
 import Pin from '../images/pin_icon.svg';
 import Logo from '../images/logo.svg';
 
 export default function Nav() {
+  const {t} = useContext(PageContext);
   const {pathname} = useLocation();
 
   window.onclick = e => {
@@ -43,33 +46,51 @@ export default function Nav() {
       </a>
       <ul className='nav__menu'>
         <li className='nav__menu__item'>
-          <NavLink to="/products">Продукты</NavLink>
+          <NavLink to="/products">
+            {t('header.nav.products')}
+          </NavLink>
         </li>
         <li className='nav__menu__item'>
-          <NavLink to="/application">Приложение</NavLink>
+          <NavLink to="/application">
+            {t('header.nav.app')}
+          </NavLink>
         </li>
         <li className='nav__menu__item nav__menu__item--extra-menu'>
-          <NavLink to="/distribution" onClick={openExtraMenu}>Дистрибуция</NavLink>
+          <NavLink to="/distribution" onClick={openExtraMenu}>
+            {t('header.nav.distribution')}
+          </NavLink>
           <ul className="nav__extra__menu">
             <li className='nav__menu__item'>
-              <NavLink to="/contact-us">Связаться с нами</NavLink>
+              <NavLink to="/contact-us">
+                {t('header.nav.contact')}
+              </NavLink>
             </li>
             <li className='nav__menu__item'>
-              <NavLink to="/wholesale-customers">Оптовым покупателям</NavLink>
+              <NavLink to="/wholesale-customers">
+                {t('header.nav.wholesaleBuyers')}
+              </NavLink>
             </li>
             <li className='nav__menu__item'>
-              <NavLink to="/refund">Условия возврата</NavLink>
+              <NavLink to="/refund">
+                {t('header.nav.refund')}
+              </NavLink>
             </li>
             <li className='nav__menu__item'>
-              <NavLink to="/company">О компании</NavLink>
+              <NavLink to="/company">
+                {t('header.nav.company')}
+              </NavLink>
             </li>
             <li className='nav__menu__item'>
-              <NavLink to="/policy">Политика конфиденциальности</NavLink>
+              <NavLink to="/policy">
+                {t('header.nav.policy')}
+              </NavLink>
             </li>
           </ul>
         </li>
         <li className='nav__menu__item'>
-          <NavLink to="/where-to-buy">Где купить?</NavLink>
+          <NavLink to="/where-to-buy">
+            {t('defaults.products.whereToBuy')}
+          </NavLink>
         </li>
       </ul>
     </nav>

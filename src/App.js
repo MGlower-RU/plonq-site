@@ -1,4 +1,5 @@
 import React from 'react';
+import PageContextProvider from './components/Context';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -11,11 +12,13 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <div className="page__wrapper">
-      <Router>
-        <Nav />
-        <PageSwitch />
-        <Footer />
-      </Router>
+      <PageContextProvider>
+        <Router>
+          <Nav />
+          <PageSwitch />
+          <Footer />
+        </Router>
+      </PageContextProvider>
     </div>
   );
 }

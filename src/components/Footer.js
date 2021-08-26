@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
 import MediaQuery from 'react-responsive';
 import { NavLink } from 'react-router-dom';
+import { PageContext } from './Context';
 
 import Logo from '../images/logo.svg';
 import Appstore from '../images/appstore.svg';
@@ -9,25 +11,54 @@ import Instagram from '@material-ui/icons/Instagram';
 import Twitter from '@material-ui/icons/Twitter';
 
 export default function Footer() {
+  const {lngDetect, t, Trans} = useContext(PageContext);
+
+  const lngs = [
+    {
+      short: 'ru',
+      lngName: 'Ru'
+    },
+    {
+      short: 'en',
+      lngName: 'En'
+    },
+  ]
+
+  function changeLanguage(e, lng) {
+    e.preventDefault();
+    lngDetect.changeLanguage(lng.short)
+  }
+
   return (
     <footer className="footer">
       <MediaQuery minWidth={1281}>
         <div className="footer__features">
-          <div className="footer__logo">
+          <NavLink to='/' className="footer__logo">
             <img src={Logo} alt="" />
-          </div>
+          </NavLink>
           <div className="footer__email__subscription">
             <div className="footer__email__subscription__text">
-              Подпишитесь на наши обновления
+              {t('footer.emailSubscription.p')}
             </div>
             <form className='footer__email__subscription__form'>
               <input type="email" name="subEmail" id="emailInput" />
-              <button type="submit">Подписаться</button>
+              <button type="submit">
+                {t('footer.emailSubscription.button')}
+              </button>
             </form>
           </div>
           <div className="footer__localization">
-            <a href="/" className='current-language'>Ru</a>
-            <a href="/">En</a>
+            {lngs.map(lng => {
+              return (
+                <a
+                  href="/"
+                  key={lng.short}
+                  className={lngDetect.language === lng.short ? 'current-language' : ''}
+                  onClick={e => changeLanguage(e, lng)}
+                >
+                  {lng.lngName}
+                </a>
+              )})}
           </div>
         </div>
         <div className="footer__general">
@@ -57,7 +88,9 @@ export default function Footer() {
           </div>
           <div className="footer__nav">
             <ul className="footer__nav__list">
-              <li>Продукты</li>
+              <li>
+                {t('footer.nav.products.header')}
+              </li>
               <li>
                 <NavLink to="/plonq400">Plonq 400</NavLink>
               </li>
@@ -69,36 +102,58 @@ export default function Footer() {
               </li>
             </ul>
             <ul className="footer__nav__list">
-              <li>Технологии</li>
               <li>
-                <NavLink to="/application">О приложении</NavLink>
+                {t('footer.nav.techs.header')}
               </li>
               <li>
-                <NavLink to="/about-cigarette">Об электронных сигаретах</NavLink>
-              </li>
-            </ul>
-            <ul className="footer__nav__list">
-              <li>Поддержка</li>
-              <li>
-                <NavLink to="/contact-us">Связаться с нами</NavLink>
+                <NavLink to="/application">
+                  {t('footer.nav.techs.app')}
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/refund">Условия возврата</NavLink>
-              </li>
-              <li>
-                <NavLink to="/policy">Политика конфиденциальности</NavLink>
+                <NavLink to="/about-cigarettes">
+                  {t('footer.nav.techs.cigarettes')}
+                </NavLink>
               </li>
             </ul>
             <ul className="footer__nav__list">
-              <li>Прочее</li>
               <li>
-                <NavLink to="/market-places">Точки продаж</NavLink>
+                {t('footer.nav.support.header')}
               </li>
               <li>
-                <NavLink to="/company">О компании</NavLink>
+                <NavLink to="/contact-us">
+                  {t('footer.nav.support.contact')}
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/wholesale-customers">Оптовым покупателям</NavLink>
+                <NavLink to="/refund">
+                  {t('footer.nav.support.refund')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/policy">
+                  {t('footer.nav.support.policy')}
+                </NavLink>
+              </li>
+            </ul>
+            <ul className="footer__nav__list">
+              <li>
+                {t('footer.nav.other.header')}
+              </li>
+              <li>
+                <NavLink to="/market-places">
+                  {t('footer.nav.other.places')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/company">
+                  {t('footer.nav.other.company')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/wholesale-customers">
+                  {t('footer.nav.other.wholesaleBuyers')}
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -120,28 +175,48 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer__warning__text">
-        ПРОДАЖА НЕСОВЕРШЕННОЛЕТНИМ ЗАПРЕЩЕНА.<br/>
-        Сайт используется исключительно в целях информирования действующих потребителей продукции PLONQ<br/>
-        Защищено выпущенными и/или находящимися на одобрении международными патентами..
+          <Trans i18nKey="footer.warning.1">
+            ПРОДАЖА НЕСОВЕРШЕННОЛЕТНИМ ЗАПРЕЩЕНА.
+          </Trans><br/>
+          <Trans i18nKey="footer.warning.2">
+            Сайт используется исключительно в целях информирования
+          </Trans>
+          <Trans i18nKey="footer.warning.3">
+             действующих потребителей продукции PLONQ
+          </Trans><br/>
+          <Trans i18nKey="footer.warning.4">
+            Защищено выпущенными и/или находящимися на одобрении международными патентами..
+          </Trans>
         </div>
       </MediaQuery>
       <MediaQuery minWidth={961} maxWidth={1280}>
         <div className="footer__features">
-          <div className="footer__logo">
+          <NavLink to='/' className="footer__logo">
             <img src={Logo} alt="" />
-          </div>
+          </NavLink>
           <div className="footer__email__subscription">
             <div className="footer__email__subscription__text">
-              Подпишитесь на наши обновления
+              {t('footer.emailSubscription.p')}
             </div>
             <form className='footer__email__subscription__form'>
               <input type="email" name="subEmail" id="emailInput" />
-              <button type="submit">Подписаться</button>
+              <button type="submit">
+                {t('footer.emailSubscription.button')}
+              </button>
             </form>
           </div>
           <div className="footer__localization">
-            <a href="/" className='current-language'>Ru</a>
-            <a href="/">En</a>
+            {lngs.map(lng => {
+              return (
+                <a
+                  href="/"
+                  key={lng.short}
+                  className={lngDetect.language === lng.short ? 'current-language' : ''}
+                  onClick={e => changeLanguage(e, lng)}
+                >
+                  {lng.lngName}
+                </a>
+              )})}
           </div>
         </div>
         <div className="footer__general">
@@ -171,7 +246,9 @@ export default function Footer() {
           </div>
           <div className="footer__nav">
             <ul className="footer__nav__list">
-              <li>Продукты</li>
+              <li>
+                {t('footer.nav.products.header')}
+              </li>
               <li>
                 <NavLink to="/plonq400">Plonq 400</NavLink>
               </li>
@@ -183,36 +260,58 @@ export default function Footer() {
               </li>
             </ul>
             <ul className="footer__nav__list">
-              <li>Технологии</li>
               <li>
-                <NavLink to="/application">О приложении</NavLink>
+                {t('footer.nav.techs.header')}
               </li>
               <li>
-                <NavLink to="/about-cigarette">Об электронных сигаретах</NavLink>
-              </li>
-            </ul>
-            <ul className="footer__nav__list">
-              <li>Поддержка</li>
-              <li>
-                <NavLink to="/contact-us">Связаться с нами</NavLink>
+                <NavLink to="/application">
+                  {t('footer.nav.techs.app')}
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/refund">Условия возврата</NavLink>
-              </li>
-              <li>
-                <NavLink to="/policy">Политика конфиденциальности</NavLink>
+                <NavLink to="/about-cigarettes">
+                  {t('footer.nav.techs.cigarettes')}
+                </NavLink>
               </li>
             </ul>
             <ul className="footer__nav__list">
-              <li>Прочее</li>
               <li>
-                <NavLink to="/market-places">Точки продаж</NavLink>
+                {t('footer.nav.support.header')}
               </li>
               <li>
-                <NavLink to="/company">О компании</NavLink>
+                <NavLink to="/contact-us">
+                  {t('footer.nav.support.contact')}
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/wholesale-customers">Оптовым покупателям</NavLink>
+                <NavLink to="/refund">
+                  {t('footer.nav.support.refund')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/policy">
+                  {t('footer.nav.support.policy')}
+                </NavLink>
+              </li>
+            </ul>
+            <ul className="footer__nav__list">
+              <li>
+                {t('footer.nav.other.header')}
+              </li>
+              <li>
+                <NavLink to="/market-places">
+                  {t('footer.nav.other.places')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/company">
+                  {t('footer.nav.other.company')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/wholesale-customers">
+                  {t('footer.nav.other.wholesaleBuyers')}
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -227,9 +326,18 @@ export default function Footer() {
         </div>
         <div className="footer__copyright">
           <div className="footer__warning__text">
-          ПРОДАЖА НЕСОВЕРШЕННОЛЕТНИМ ЗАПРЕЩЕНА.<br/>
-          Сайт используется исключительно в целях информирования<br/>действующих потребителей продукции PLONQ<br/>
-          Защищено выпущенными и/или находящимися на одобрении международными патентами..
+            <Trans i18nKey="footer.warning.1">
+              ПРОДАЖА НЕСОВЕРШЕННОЛЕТНИМ ЗАПРЕЩЕНА.
+            </Trans><br/>
+            <Trans i18nKey="footer.warning.2">
+              Сайт используется исключительно в целях информирования
+            </Trans><br/>
+            <Trans i18nKey="footer.warning.3">
+              действующих потребителей продукции PLONQ
+            </Trans><br/>
+            <Trans i18nKey="footer.warning.4">
+              Защищено выпущенными и/или находящимися на одобрении международными патентами..
+            </Trans>
           </div>
           <div className="footer__copyright__text">
             © 2021 PLONQ LLC<br/>
@@ -243,21 +351,34 @@ export default function Footer() {
         <div className="footer__features">
           <div className="footer__email__subscription">
             <div className="footer__email__subscription__text">
-              Подпишитесь на наши обновления
+              {t('footer.emailSubscription.p')}
             </div>
             <form className='footer__email__subscription__form'>
               <input type="email" name="subEmail" id="emailInput" />
-              <button type="submit">Подписаться</button>
+              <button type="submit">
+                {t('footer.emailSubscription.button')}
+              </button>
             </form>
           </div>
           <div className="footer__localization">
-            <a href="/" className='current-language'>Ru</a>
-            <a href="/">En</a>
+            {lngs.map(lng => {
+              return (
+                <a
+                  href="/"
+                  key={lng.short}
+                  className={lngDetect.language === lng.short ? 'current-language' : ''}
+                  onClick={e => changeLanguage(e, lng)}
+                >
+                  {lng.lngName}
+                </a>
+              )})}
           </div>
         </div>
         <div className="footer__nav">
           <ul className="footer__nav__list">
-            <li>Продукты</li>
+            <li>
+              {t('footer.nav.products.header')}
+            </li>
             <li>
               <NavLink to="/plonq400">Plonq 400</NavLink>
             </li>
@@ -269,36 +390,58 @@ export default function Footer() {
             </li>
           </ul>
           <ul className="footer__nav__list">
-            <li>Технологии</li>
             <li>
-              <NavLink to="/application">О приложении</NavLink>
+              {t('footer.nav.techs.header')}
             </li>
             <li>
-              <NavLink to="/about-cigarette">Об электронных сигаретах</NavLink>
-            </li>
-          </ul>
-          <ul className="footer__nav__list">
-            <li>Поддержка</li>
-            <li>
-              <NavLink to="/contact-us">Связаться с нами</NavLink>
+              <NavLink to="/application">
+                {t('footer.nav.techs.app')}
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/refund">Условия возврата</NavLink>
-            </li>
-            <li>
-              <NavLink to="/policy">Политика конфиденциальности</NavLink>
+              <NavLink to="/about-cigarettes">
+                {t('footer.nav.techs.cigarettes')}
+              </NavLink>
             </li>
           </ul>
           <ul className="footer__nav__list">
-            <li>Прочее</li>
             <li>
-              <NavLink to="/market-places">Точки продаж</NavLink>
+              {t('footer.nav.support.header')}
             </li>
             <li>
-              <NavLink to="/company">О компании</NavLink>
+              <NavLink to="/contact-us">
+                {t('footer.nav.support.contact')}
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/wholesale-customers">Оптовым покупателям</NavLink>
+              <NavLink to="/refund">
+                {t('footer.nav.support.refund')}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/policy">
+                {t('footer.nav.support.policy')}
+              </NavLink>
+            </li>
+          </ul>
+          <ul className="footer__nav__list">
+            <li>
+              {t('footer.nav.other.header')}
+            </li>
+            <li>
+              <NavLink to="/market-places">
+                {t('footer.nav.other.places')}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/company">
+                {t('footer.nav.other.company')}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/wholesale-customers">
+                {t('footer.nav.other.wholesaleBuyers')}
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -345,24 +488,37 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer__warning__text">
-        ПРОДАЖА НЕСОВЕРШЕННОЛЕТНИМ ЗАПРЕЩЕНА.<br/>
-        Сайт используется исключительно в целях информирования действующих потребителей продукции PLONQ<br/>
-        Защищено выпущенными и/или находящимися на одобрении международными патентами..
+          <Trans i18nKey="footer.warning.1">
+            ПРОДАЖА НЕСОВЕРШЕННОЛЕТНИМ ЗАПРЕЩЕНА.
+          </Trans><br/>
+          <Trans i18nKey="footer.warning.2">
+            Сайт используется исключительно в целях информирования
+          </Trans>
+          <Trans i18nKey="footer.warning.3">
+             действующих потребителей продукции PLONQ
+          </Trans><br/>
+          <Trans i18nKey="footer.warning.4">
+            Защищено выпущенными и/или находящимися на одобрении международными патентами..
+          </Trans>
         </div>
       </MediaQuery>
       <MediaQuery maxWidth={580}>
         <div className="footer__email__subscription">
           <div className="footer__email__subscription__text">
-            Подпишитесь на наши обновления
+            {t('footer.emailSubscription.p')}
           </div>
           <form className='footer__email__subscription__form'>
             <input type="email" name="subEmail" id="emailInput" />
-            <button type="submit">Подписаться</button>
+            <button type="submit">
+              {t('footer.emailSubscription.button')}
+            </button>
           </form>
         </div>
         <div className="footer__nav">
           <ul className="footer__nav__list">
-            <li>Продукты</li>
+            <li>
+              {t('footer.nav.products.header')}
+            </li>
             <li>
               <NavLink to="/plonq400">Plonq 400</NavLink>
             </li>
@@ -374,36 +530,58 @@ export default function Footer() {
             </li>
           </ul>
           <ul className="footer__nav__list">
-            <li>Технологии</li>
             <li>
-              <NavLink to="/application">О приложении</NavLink>
+              {t('footer.nav.techs.header')}
             </li>
             <li>
-              <NavLink to="/about-cigarette">Об электронных сигаретах</NavLink>
-            </li>
-          </ul>
-          <ul className="footer__nav__list">
-            <li>Поддержка</li>
-            <li>
-              <NavLink to="/contact-us">Связаться с нами</NavLink>
+              <NavLink to="/application">
+                {t('footer.nav.techs.app')}
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/refund">Условия возврата</NavLink>
-            </li>
-            <li>
-              <NavLink to="/policy">Политика конфиденциальности</NavLink>
+              <NavLink to="/about-cigarettes">
+                {t('footer.nav.techs.cigarettes')}
+              </NavLink>
             </li>
           </ul>
           <ul className="footer__nav__list">
-            <li>Прочее</li>
             <li>
-              <NavLink to="/market-places">Точки продаж</NavLink>
+              {t('footer.nav.support.header')}
             </li>
             <li>
-              <NavLink to="/company">О компании</NavLink>
+              <NavLink to="/contact-us">
+                {t('footer.nav.support.contact')}
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/wholesale-customers">Оптовым покупателям</NavLink>
+              <NavLink to="/refund">
+                {t('footer.nav.support.refund')}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/policy">
+                {t('footer.nav.support.policy')}
+              </NavLink>
+            </li>
+          </ul>
+          <ul className="footer__nav__list">
+            <li>
+              {t('footer.nav.other.header')}
+            </li>
+            <li>
+              <NavLink to="/market-places">
+                {t('footer.nav.other.places')}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/company">
+                {t('footer.nav.other.company')}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/wholesale-customers">
+                {t('footer.nav.other.wholesaleBuyers')}
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -450,13 +628,31 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer__localization">
-          <a href="/" className='current-language'>Ru</a>
-          <a href="/">En</a>
+          {lngs.map(lng => {
+            return (
+              <a
+                href="/"
+                key={lng.short}
+                className={lngDetect.language === lng.short ? 'current-language' : ''}
+                onClick={e => changeLanguage(e, lng)}
+              >
+                {lng.lngName}
+              </a>
+            )})}
         </div>
         <div className="footer__warning__text">
-        ПРОДАЖА НЕСОВЕРШЕННОЛЕТНИМ ЗАПРЕЩЕНА.<br/>
-        Сайт используется исключительно в целях информирования действующих потребителей продукции PLONQ<br/>
-        Защищено выпущенными и/или находящимися на одобрении международными патентами..
+          <Trans i18nKey="footer.warning.1">
+            ПРОДАЖА НЕСОВЕРШЕННОЛЕТНИМ ЗАПРЕЩЕНА.
+          </Trans><br/>
+          <Trans i18nKey="footer.warning.2">
+            Сайт используется исключительно в целях информирования
+          </Trans>
+          <Trans i18nKey="footer.warning.3">
+             действующих потребителей продукции PLONQ
+          </Trans><br/>
+          <Trans i18nKey="footer.warning.4">
+            Защищено выпущенными и/или находящимися на одобрении международными патентами..
+          </Trans>
         </div>
       </MediaQuery>
     </footer>
