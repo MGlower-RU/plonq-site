@@ -189,6 +189,26 @@ i18n
                 description: '20 mg'
               },
             },
+            design: {
+              header: 'Elegant design',
+              tagline: {
+                1: 'Discreet',
+                2: ' and confident',
+              }
+            },
+            components: {
+              header: 'Quality components',
+              description: {
+                1: 'We use Japanese cotton to store liquid in the device.',
+                2: 'Latest Segger 3856-G microcontroller delivers consistent flavor throughout the entire vaping process',
+                3: 'A quality battery made of pure cobalt faithfully withstands 500 puffs',
+                4: 'The body of the device is made of high-quality PCTG plastic, which does not emit toxins when heated',
+              }
+            },
+            natureTastes: {
+              header: 'Natural tastes',
+              p: 'Unlike our Chinese counterparts, we do not use sweeteners or flavor enhancers.'
+            },
             tastes: {
               header: 'Assortment of flavors',
               1: {
@@ -472,6 +492,26 @@ i18n
                 name: 'Никотин',
                 description: '20 мг'
               },
+            },
+            design: {
+              header: 'Элегантный дизайн',
+              tagline: {
+                1: 'Сдержанный',
+                2: 'и уверенный в себе',
+              }
+            },
+            components: {
+              header: 'Качественные компоненты',
+              description: {
+                1: 'Для хранения жидкости в устройстве мы используем японский хлопок',
+                2: 'Новейший микроконтроллер Segger 3856-G обеспечивает стабильный вкус на протяжении  всего процесса парения',
+                3: 'Качественная батарейка из чистого кобальта добросовестно выдерживает 500 затяжек',
+                4: 'Корпус устройства изготовлен из качественного PCTG пластика, который не выделяет токсины при нагревании',
+              }
+            },
+            natureTastes: {
+              header: 'Естественные вкусы',
+              p: 'В отличие от китайских аналогов, мы не используем подсластители и усилители вкуса.'
             },
             tastes: {
               header: 'Ассортимент вкусов',

@@ -80,7 +80,7 @@ export default function Main() {
           </div>
           <div className="main__header__description">
             {t('defaults.phrases.stick.standard.1')}<br/>
-            {t('defaults.phrases.stick.standard.2')}.
+            {t('defaults.phrases.stick.standard.2')}
           </div>
         </div>
         <div className="main__header__links">

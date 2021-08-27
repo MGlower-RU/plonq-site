@@ -28,6 +28,25 @@ import Ruble from '../images/specification_ruble.svg';
 import Nicotine from '../images/specification_nicotine.svg';
 import SpecsPlonq from '../images/specification_plonq_500.png';
 import SpecsPlonqFull from '../images/specification_plonq_500__fullsize.png';
+import Plonq500DesignMobile from '../images/design_plonq_500_mobile.png';
+import Plonq500Design from '../images/design_plonq_500.png';
+import Plonq500Components from '../images/plonq500_components.png';
+import CottonComponent from '../images/components_cotton.svg';
+import ControllerComponent from '../images/components_controller.svg';
+import LowBatteryComponent from '../images/components_battery_low.svg';
+import HighBatteryComponent from '../images/components_battery_high.svg';
+import PlasticComponent from '../images/components_plastic.svg';
+import MintBg from '../images/taste_mint.png';
+import PineappleBg from '../images/taste_pineapple.png';
+import MelonBg from '../images/taste_melon.png';
+import MangoBg from '../images/taste_mango.png';
+import TobaccoBg from '../images/taste_tobacco.png';
+import CoffeeBg from '../images/taste_coffee.png';
+import GreenTeaBg from '../images/taste_green_tea.png';
+import GrapesBg from '../images/taste_grapes.png';
+import EnergyBg from '../images/taste_energy.png';
+import CherryBg from '../images/taste_cherry.png';
+import ColaBg from '../images/taste_cola.png';
 
 export default function Plonq500() {
   const {t} = useContext(PageContext);
@@ -36,56 +55,67 @@ export default function Plonq500() {
   const tastesArray = [
     {
       img: Plonq500Mint,
+      background: MintBg,
       color: 'rgb(191, 229, 215)',
       taste: 1,
     },
     {
       img: Plonq500Mint,
+      background: PineappleBg,
       color: 'rgb(254, 246, 118)',
       taste: 2,
     },
     {
       img: Plonq500Mint,
+      background: MelonBg,
       color: 'rgb(252, 199, 151)',
       taste: 3,
     },
     {
       img: Plonq500Mint,
+      background: MangoBg,
       color: 'rgb(250, 147, 85)',
       taste: 4,
     },
     {
       img: Plonq500Mint,
+      background: ColaBg,
       color: 'rgb(222, 48, 60)',
       taste: 5,
     },
     {
       img: Plonq500Mint,
+      background: CherryBg,
       color: 'rgb(167, 51, 71)',
       taste: 6,
     },
     {
       img: Plonq500Mint,
+      background: GrapesBg,
       color: 'rgb(03, 56, 90)',
       taste: 7,
     },
     {
       img: Plonq500Mint,
+      background: EnergyBg,
       color: 'rgb(74, 74, 72)',
       taste: 8,
     },
     {
       img: Plonq500Mint,
+      background: TobaccoBg,
       color: 'rgb(98, 85, 73)',
       taste: 9,
     },
     {
       img: Plonq500Mint,
+      background: CoffeeBg,
       color: 'rgb(118, 80, 60)',
       taste: 10,
     },
     {
       img: Plonq500Mint,
+      background: GreenTeaBg,
       color: 'rgb(209, 221, 174)',
       taste: 11,
     },
@@ -111,6 +141,25 @@ export default function Plonq500() {
     {
       img: Nicotine,
       localisationId: 5,
+    },
+  ]
+
+  const qualityComponentsArray = [
+    {
+      img: CottonComponent,
+      localisationId: 1,
+    },
+    {
+      img: ControllerComponent,
+      localisationId: 2,
+    },
+    {
+      img: [LowBatteryComponent, HighBatteryComponent],
+      localisationId: 3,
+    },
+    {
+      img: PlasticComponent,
+      localisationId: 4,
     },
   ]
 
@@ -199,6 +248,93 @@ export default function Plonq500() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="plonq500__design__wrapper">
+        <div className="plonq500__design__container">
+          <h2 className='plonq500__title__number'>
+            {t('plonq500.design.header')}
+          </h2>
+          <div className="plonq500__design__content">
+            <h3>
+              {t('plonq500.design.tagline.1')}<br/>
+              {t('plonq500.design.tagline.2')}
+            </h3>
+            <div className="plonq500__design__img">
+              <MediaQuery minWidth={961}>
+                <img src={Plonq500Design} alt="" />
+              </MediaQuery>
+              <MediaQuery maxWidth={960}>
+                <img src={Plonq500DesignMobile} alt="" />
+              </MediaQuery>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="plonq500__components__wrapper">
+        <div className="plonq500__components__container">
+          <h2 className='plonq500__title__number'>
+            {t('plonq500.components.header')}
+          </h2>
+          <div className="plonq500__components__content">
+            <div className="plonq500__components__img">
+              <img src={Plonq500Components} alt="" />
+            </div>
+            <div className="plonq500__components__items">
+            {
+              qualityComponentsArray.map((el, i) => {
+                return (
+                  <div key={i} className="plonq500__components__item">
+                    <div className="plonq500__components__item__img">
+                      {
+                        !Array.isArray(el.img) ? <img src={el.img} alt="" /> :
+                        el.img.map((el, i) => {
+                          return (
+                            <img key={i} src={el} alt="" />
+                          )
+                        })
+                      }
+                    </div>
+                    <p>
+                      {t(`plonq500.components.description.${el.localisationId}`)}
+                    </p>
+                  </div>
+                )
+              })
+            }
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="plonq500__nature-tastes__wrapper">
+        <div className="plonq500__nature-tastes__container">
+          <div className="plonq500__nature-tastes__text">
+            <h2 className='plonq500__title__number'>
+              {t('plonq500.natureTastes.header')}
+            </h2>
+            <p>
+              {t('plonq500.natureTastes.p')}
+            </p>
+          </div>
+          <div className="plonq500__nature-tastes">
+            {
+              tastesArray.map((el, i) => {
+                return (
+                  <div key={i} className="plonq500__nature-taste">
+                    <div
+                      className="plonq500__nature-taste__stick"
+                      style={{backgroundImage: `url(${el.background})`}}
+                    >
+                      <span></span>
+                    </div>
+                    <div className="plonq500__nature-taste__name">
+                      — {t(`plonq500.tastes.${el.taste}.taste`)}
+                    </div>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>
