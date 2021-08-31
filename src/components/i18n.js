@@ -147,6 +147,21 @@ i18n
             quality: 'Quality certificates'
           },
           application: {
+            compare: {
+              header: 'Comparison of solutions',
+              chart: {
+                labels: {
+                  top: 'Smoking intensity',
+                  right: 'Days'
+                },
+                legend: {
+                  1: 'Behavioral Therapy Mobile Apps',
+                  2: 'Nicotine replacement therapy',
+                  3: 'Medicines (Tabex, Champix, etc.)',
+                },
+                link: 'Read the study'
+              }
+            },
             therapist: {
               header: 'Digital therapist',
               title: 'PLONQ AI is based on behavioral therapy that has been proven to be effective.',
@@ -514,6 +529,21 @@ i18n
             quality: 'Сертификаты качества'
           },
           application: {
+            compare: {
+              header: 'Сравнение решений',
+              chart: {
+                labels: {
+                  top: 'Интенсивность курения',
+                  right: 'Дни'
+                },
+                legend: {
+                  1: 'Мобильные приложения на основе поведенческой терапии',
+                  2: 'Никотино-заменительная терапия',
+                  3: 'Медикаменты (Табекс, Чампикс и др.)',
+                },
+                link: 'Читать исследование'
+              }
+            },
             therapist: {
               header: 'Цифровой терапевт',
               title: 'PLONQ AI создан на основе поведенческой терапии, которая доказала свою эффективность.',

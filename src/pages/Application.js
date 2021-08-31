@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 
+import CurveLineChart from '../components/CurveLineChart';
 import { PageContext } from '../components/Context';
 import MediaQuery from 'react-responsive';
 import Carousel from 'react-material-ui-carousel';
@@ -37,6 +38,65 @@ export default function Application() {
           <img src={PairingPhone} alt="" />
         </div>
       </MediaQuery>
+      <div className="application__compare__wrapper">
+        <h2>
+          {t('application.compare.header')}
+        </h2>
+        <div className="application__compare__container">
+          <MediaQuery minWidth={961}>
+            <div className="application__compare__chart">
+              <h3>
+                {t('application.compare.chart.labels.top')}
+              </h3>
+              <CurveLineChart />
+              <h3>
+                {t('application.compare.chart.labels.right')}
+              </h3>
+            </div>
+            <div className="application__compare__chart-legend">
+              <div className="application__compare__chart-legend__items">
+                <p>
+                  {t('application.compare.chart.legend.1')}
+                </p>
+                <p>
+                  {t('application.compare.chart.legend.2')}
+                </p>
+                <p>
+                  {t('application.compare.chart.legend.3')}
+                </p>
+              </div>
+              <a href="https://google.com">
+                {t('application.compare.chart.link')}
+              </a>
+            </div>
+          </MediaQuery>
+          <MediaQuery maxWidth={960}>
+            <div className="application__compare__chart-legend__items">
+                <p>
+                  {t('application.compare.chart.legend.1')}
+                </p>
+                <p>
+                  {t('application.compare.chart.legend.2')}
+                </p>
+                <p>
+                  {t('application.compare.chart.legend.3')}
+                </p>
+            </div>
+            <div className="application__compare__chart">
+              <h3>
+                {t('application.compare.chart.labels.top')}
+              </h3>
+              <CurveLineChart />
+              <h3>
+                {t('application.compare.chart.labels.right')}
+              </h3>
+            </div>
+            <a href="https://google.com">
+              {t('application.compare.chart.link')}
+            </a>
+          </MediaQuery>
+        </div>
+      </div>
       <div className="application__therapist__wrapper">
         <div className="application__therapist__text">
           <h2>
