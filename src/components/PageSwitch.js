@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { lazy } from 'react';
 
 import { Switch, Route, Redirect } from 'react-router-dom';
-import ContactUs from '../pages/ContactUs';
+import Page404 from '../pages/Page404';
 
-import Main from '../pages/Main';
-import Plonq500 from '../pages/Plonq500';
-import ProductionOut from '../pages/ProductionOut';
-import Products from '../pages/Products';
-import WholesaleBuyers from '../pages/WholesaleBuyers';
+const Application = lazy(() => import('../pages/Application'));
+const ContactUs = lazy(() => import('../pages/ContactUs'));
+const Main = lazy(() => import('../pages/Main'));
+const Plonq500 = lazy(() => import('../pages/Plonq500'));
+const ProductionOut = lazy(() => import('../pages/ProductionOut'));
+const Products = lazy(() => import('../pages/Products'));
+const WholesaleBuyers = lazy(() => import('../pages/WholesaleBuyers'));
 
 export default function PageSwitch() {
   return (
@@ -19,25 +21,13 @@ export default function PageSwitch() {
         <Products />
       </Route>
       <Route path="/application">
-        <h1>Приложение</h1>
-      </Route>
-      <Route path="/where-to-buy">
-        <h1>Где купить?</h1>
+        <Application />
       </Route>
       <Route path="/contact-us">
         <ContactUs />
       </Route>
       <Route path="/wholesale-customers">
         <WholesaleBuyers />
-      </Route>
-      <Route path="/refund">
-        <h1>Условия возврата</h1>
-      </Route>
-      <Route path="/company">
-        <h1>О компании</h1>
-      </Route>
-      <Route path="/policy">
-        <h1>Политика конфиденциальности</h1>
       </Route>
       <Route path="/plonq400">
         <ProductionOut goTo={'Plonq 500'} />
@@ -46,7 +36,7 @@ export default function PageSwitch() {
         <Plonq500 />
       </Route>
       <Route path="/page404">
-        <h1>404 page</h1>
+        <Page404 />
       </Route>
       <Route path="*">
         <Redirect to="page404" />

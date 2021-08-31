@@ -146,6 +146,36 @@ i18n
             },
             quality: 'Quality certificates'
           },
+          application: {
+            therapist: {
+              header: 'Digital therapist',
+              title: 'PLONQ AI is based on behavioral therapy that has been proven to be effective.',
+              description: 'The algorithm will study your smoking habit and help you gradually reduce the intensity to complete quitting, avoiding withdrawal symptoms.'
+            },
+            howItWorks: {
+              header: 'How it works',
+              0: {
+                title: 'Plonq Ai studies you',
+                p: 'For the first week, smoke in your usual rhythm, while the algorithm learns your habit.'
+              },
+              1: {
+                title: 'Plonq Ai studies you',
+                p: 'For the first week, smoke in your usual rhythm, while the algorithm learns your habit.'
+              },
+              2: {
+                title: 'Plonq Ai studies you',
+                p: 'For the first week, smoke in your usual rhythm, while the algorithm learns your habit.'
+              },
+            },
+            update: {
+              header: 'Update',
+              description: {
+                1: 'Time after time we will update Plonq AI and make smoking management more efficient.',
+                2: 'You don\'t need to buy new devices for this. We took care of everything.',
+                3: 'Just update PLONQ AI via the mobile app.'
+              }
+            },
+          },
           plonq500: {
             advantages: {
               header: 'Everything as you wanted',
@@ -196,6 +226,28 @@ i18n
                 2: ' and confident',
               }
             },
+            puff: {
+              header: 'Reference puff',
+              p: 'The tight draft and balance of vaporization are what makes the Plonq vaping so special.',
+              specifications: {
+                1: {
+                  unit: 'kPa',
+                  specification: 'Puff density'
+                },
+                2: {
+                  unit: 'mg',
+                  specification: 'Vapor density'
+                },
+                3: {
+                  unit: 'sec',
+                  specification: 'Activation speed'
+                },
+              }
+            },
+            vapor: {
+              header: 'Soft vapor',
+              p: 'Luminar flow separation with 360° filter, provides a comfortable vapor temperature, making vaping truly smooth.',
+            },
             components: {
               header: 'Quality components',
               description: {
@@ -205,9 +257,20 @@ i18n
                 4: 'The body of the device is made of high-quality PCTG plastic, which does not emit toxins when heated',
               }
             },
+            composition: {
+              header: 'Safe fluid composition',
+              p: {
+                1: 'Each taste undergoes a "Toxicological Analysis" at the independent laboratory "Ingesciences" in France.',
+                2: 'Only when we are convinced of safety do we allow taste to be sold.'
+              }
+            },
             natureTastes: {
               header: 'Natural tastes',
               p: 'Unlike our Chinese counterparts, we do not use sweeteners or flavor enhancers.'
+            },
+            quality: {
+              header: 'Strict quality control',
+              p: 'Each Plonq device undergoes quality control according to the international AQL system at a strict level of S 0.4, which allows it to withstand a waste rate of less than 0.2%.'
             },
             tastes: {
               header: 'Assortment of flavors',
@@ -450,6 +513,36 @@ i18n
             },
             quality: 'Сертификаты качества'
           },
+          application: {
+            therapist: {
+              header: 'Цифровой терапевт',
+              title: 'PLONQ AI создан на основе поведенческой терапии, которая доказала свою эффективность.',
+              description: 'Алгоритм изучит вашу привычку к курению и поможет плавно снизить интенсивность вплоть до полного отказа, избегая симптомов отмены.'
+            },
+            howItWorks: {
+              header: 'Как это работает',
+              0: {
+                title: 'Plonq Ai изучает Вас',
+                p: 'Первую неделю курите в привычном для себя ритме, пока алгоритм изучит вашу привычку.'
+              },
+              1: {
+                title: 'Plonq Ai изучает Вас',
+                p: 'Первую неделю курите в привычном для себя ритме, пока алгоритм изучит вашу привычку.'
+              },
+              2: {
+                title: 'Plonq Ai изучает Вас',
+                p: 'Первую неделю курите в привычном для себя ритме, пока алгоритм изучит вашу привычку.'
+              },
+            },
+            update: {
+              header: 'Обновление',
+              description: {
+                1: 'Раз за разом мы будем обновлять Plonq AI и делать управление курением все более эффективным.',
+                2: 'Для этого вам не нужно покупать новые устройства. Мы обо всем позаботились.',
+                3: 'Просто обновите PLONQ AI через мобильное приложение.'
+              }
+            },
+          },
           plonq500: {
             advantages: {
               header: 'Всё как вы хотели',
@@ -500,6 +593,28 @@ i18n
                 2: 'и уверенный в себе',
               }
             },
+            puff: {
+              header: 'Эталонная тяга',
+              p: 'Плотная тяга и баланс парообразования, вот что делает парение Plonq особенным.',
+              specifications: {
+                1: {
+                  unit: 'кПа',
+                  specification: 'Плотность тяги'
+                },
+                2: {
+                  unit: 'мг',
+                  specification: 'Плотность пара'
+                },
+                3: {
+                  unit: 'сек',
+                  specification: 'Скорость активации'
+                },
+              }
+            },
+            vapor: {
+              header: 'Мягкий пар',
+              p: 'Разделение люминарного потока  с фильтром 360°, обеспечивает  комфортную температуру пара, делая парение по-настоящему мягким.',
+            },
             components: {
               header: 'Качественные компоненты',
               description: {
@@ -509,9 +624,20 @@ i18n
                 4: 'Корпус устройства изготовлен из качественного PCTG пластика, который не выделяет токсины при нагревании',
               }
             },
+            composition: {
+              header: 'Безопасный состав жидкости',
+              p: {
+                1: 'Каждый вкус проходит «Токсикологический анализ» в независимой лаборатории «Ingesciences» во Франции.',
+                2: 'Только убедившись в безопасности, мы допускаем вкус к продаже.'
+              }
+            },
             natureTastes: {
               header: 'Естественные вкусы',
               p: 'В отличие от китайских аналогов, мы не используем подсластители и усилители вкуса.'
+            },
+            quality: {
+              header: 'Строгий контроль качества',
+              p: 'Каждое устройство Plonq проходит контроль качества по международной системе AQL на строгом уровне S 0.4, что позволяет выдерживать количество брака менее 0.2%.'
             },
             tastes: {
               header: 'Ассортимент вкусов',

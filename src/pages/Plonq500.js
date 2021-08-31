@@ -47,6 +47,11 @@ import GrapesBg from '../images/taste_grapes.png';
 import EnergyBg from '../images/taste_energy.png';
 import CherryBg from '../images/taste_cherry.png';
 import ColaBg from '../images/taste_cola.png';
+import LabLogo from '../images/composition_laboratory_logo.png';
+import StickBody from '../images/plonq500_puff_stick_body.png';
+import StickSmoke from '../images/plonq500_puff_stick_smoke.png';
+import VaporStickBody from '../images/plonq500_vapor_stick_body.png';
+import VaporStickSmoke from '../images/plonq500_vapor_stick_smoke.png';
 
 export default function Plonq500() {
   const {t} = useContext(PageContext);
@@ -272,6 +277,56 @@ export default function Plonq500() {
           </div>
         </div>
       </div>
+      <div className="plonq500__puff__wrapper">
+        <img draggable='false' src={StickSmoke} className='plonq500__puff__img__smoke' alt="" />
+        <img draggable='false' src={StickBody} className='plonq500__puff__img__body' alt="" />
+        <div className="plonq500__puff__container">
+          <h2 className='plonq500__title__number'>
+            {t('plonq500.puff.header')}
+          </h2>
+          <p>
+            {t('plonq500.puff.p')}
+          </p>
+          <div className="plonq500__puff__specifications">
+            <div className="plonq500__puff__specification">
+              <div className="plonq500__puff__specification__unit">
+                ±0.4 {t('plonq500.puff.specifications.1.unit')}
+              </div>
+              <div className="plonq500__puff__specification__text">
+                {t('plonq500.puff.specifications.1.specification')}
+              </div>
+            </div>
+            <div className="plonq500__puff__specification">
+              <div className="plonq500__puff__specification__unit">
+                7-7.5 {t('plonq500.puff.specifications.2.unit')}
+              </div>
+              <div className="plonq500__puff__specification__text">
+                {t('plonq500.puff.specifications.2.specification')}
+              </div>
+            </div>
+            <div className="plonq500__puff__specification">
+              <div className="plonq500__puff__specification__unit">
+                =0.2 {t('plonq500.puff.specifications.3.unit')}
+              </div>
+              <div className="plonq500__puff__specification__text">
+                {t('plonq500.puff.specifications.3.specification')}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="plonq500__vapor__wrapper">
+        <img draggable='false' src={VaporStickSmoke} className='plonq500__vapor__img__smoke' alt="" />
+        <img draggable='false' src={VaporStickBody} className='plonq500__vapor__img__body' alt="" />
+        <div className="plonq500__vapor__container">
+          <h2 className='plonq500__title__number'>
+            {t('plonq500.vapor.header')}
+          </h2>
+          <p>
+            {t('plonq500.vapor.p')}
+          </p>
+        </div>
+      </div>
       <div className="plonq500__components__wrapper">
         <div className="plonq500__components__container">
           <h2 className='plonq500__title__number'>
@@ -307,6 +362,22 @@ export default function Plonq500() {
           </div>
         </div>
       </div>
+      <div className="plonq500__composition__wrapper">
+        <div className="plonq500__composition__container">
+          <h2 className='plonq500__title__number'>
+            {t('plonq500.composition.header')}
+          </h2>
+          <p>
+            {t('plonq500.composition.p.1')}
+          </p>
+          <p>
+            {t('plonq500.composition.p.2')}
+          </p>
+          <div className="plonq500__composition__img">
+            <img src={LabLogo} alt="" />
+          </div>
+        </div>
+      </div>
       <div className="plonq500__nature-tastes__wrapper">
         <div className="plonq500__nature-tastes__container">
           <div className="plonq500__nature-tastes__text">
@@ -336,6 +407,16 @@ export default function Plonq500() {
               })
             }
           </div>
+        </div>
+      </div>
+      <div className="plonq500__quality__wrapper">
+        <div className="plonq500__quality__container">
+          <h2 className='plonq500__title__number'>
+            {t('plonq500.quality.header')}
+          </h2>
+          <p>
+            {t('plonq500.quality.p')}
+          </p>
         </div>
       </div>
       <div className="plonq500__specifications__wrapper">
