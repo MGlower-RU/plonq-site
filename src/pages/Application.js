@@ -127,6 +127,7 @@ export default function Application() {
           indicators={false}
           navButtonsAlwaysVisible={true}
           navButtonsWrapperProps={{
+            className: 'application__how-it-works__carousel__button-wrapper',
             style: {
               borderRadius: '50%',
               top: 'auto',

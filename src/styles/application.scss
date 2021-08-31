@@ -230,15 +230,14 @@
     }
   }
 
-  .Carousel-next-11,
-  .Carousel-prev-12 {
+  .application__how-it-works__carousel__button-wrapper {
     height: 8.8rem;
     width: 8.8rem;
     flex: 0 0 auto;
-  }
 
-  .Carousel-prev-12 {
-    order: -1;
+    &:last-of-type {
+      order: -1;
+    }
   }
 }
 
@@ -371,8 +370,7 @@
       max-width: 43.2rem;
     }
 
-    .Carousel-next-11,
-    .Carousel-prev-12 {
+    .application__how-it-works__carousel__button-wrapper {
       height: 6rem;
       width: 6rem;
     }
@@ -569,8 +567,7 @@
       max-width: 28rem;
     }
 
-    .Carousel-next-11,
-    .Carousel-prev-12 {
+    .application__how-it-works__carousel__button-wrapper {
       height: 4.5rem;
       width: 4.5rem;
     }
