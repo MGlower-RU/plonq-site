@@ -26,6 +26,81 @@
   }
 }
 
+.application__problem__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 123.1rem;
+  margin: 0 auto 39rem;
+}
+
+.application__problem__text {
+  max-width: 40.8rem;
+
+  h2 {
+    margin-bottom: 3.8rem;
+  }
+
+  h3 {
+    margin-bottom: 2.1rem;
+  }
+
+  p {
+    &:not(:last-of-type) {
+      margin-bottom: 2.1rem;
+    }
+  }
+}
+
+.application__problem__chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 5.4rem;
+}
+
+.application__problem__chart__legend {
+  margin-bottom: 2.5rem;
+}
+
+.application__problem__chart__legend__item {
+  position: relative;
+  text-align: end;
+
+  &:not(:last-of-type) {
+    margin-bottom: 2.2rem;
+  }
+
+  &::after {
+    position: absolute;
+    left: calc(100% + 3.2rem);
+    bottom: .6rem;
+    content: '';
+    height: .05rem;
+    width: 23.8rem;
+    background-color: #000000;
+  }
+
+  span {
+    font-weight: 300;
+    font-size: 2.8rem;
+    line-height: 3.4rem;
+  }
+}
+
+.application__problem__chart__img {
+  flex: 0 0 auto;
+  --problem-chart-size: 48.7rem;
+  width: var(--problem-chart-size);
+  height: var(--problem-chart-size);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
 .application__compare__wrapper {
   max-width: 122.8rem;
   width: 100%;
@@ -55,6 +130,15 @@
     border: .1rem solid #000000;
     border-radius: 10rem;
     padding: 0 4.75rem;
+    transition: all .24s ease-in-out;
+
+    &:hover,
+    &:focus {
+      border-color: transparent;
+      background-color: #1f1f1f;
+      color: #FFFFFF;
+      transition: all .24s ease-in-out;
+    }
   }
 }
 
@@ -267,7 +351,30 @@
   }
 }
 
-@media(max-width: 1120px) {  
+@media(max-width: 1120px) {
+  .application__problem__chart {
+    gap: 3rem;
+  }
+
+  .application__problem__chart__legend {
+    margin-bottom: 1rem;
+  }
+
+  .application__problem__chart__legend__item {  
+    &:not(:last-of-type) {
+      margin-bottom: 1.4rem;
+    }
+  
+    &::after {
+      left: calc(100% + 1.5rem);
+      width: 19rem;
+    }
+  }
+
+  .application__problem__chart__img {
+    --problem-chart-size: 41rem;
+  }
+
   .application__compare__chart {
     width: 60rem;
   }
@@ -306,6 +413,53 @@
       height: 36.1rem;
       object-fit: contain;
     }
+  }
+
+  .application__problem__wrapper {
+    flex-direction: column;
+    max-width: 67.2rem;
+    margin: 0 auto 21.6rem;
+    padding: 0 2rem;
+  }
+  
+  .application__problem__text {
+    max-width: 49.6rem;
+    margin-bottom: 6.8rem;
+  
+    h2 {
+      margin-bottom: 4.1rem;
+    }
+  }
+  
+  .application__problem__chart {
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
+  }
+  
+  .application__problem__chart__legend {
+    margin-bottom: .9rem;
+  }
+  
+  .application__problem__chart__legend__item {  
+    &:not(:last-of-type) {
+      margin-bottom: 1.3rem;
+    }
+  
+    &::after {
+      left: calc(100% + 2.5rem);
+      bottom: .5rem;
+      width: 19rem;
+    }
+  
+    span {
+      font-size: 2.3rem;
+      line-height: 3.3rem;
+    }
+  }
+  
+  .application__problem__chart__img {
+    --problem-chart-size: 38.4rem;
   }
 
   .application__therapist__wrapper {
@@ -453,6 +607,22 @@
     margin-top: 6.4rem;
   }
 
+  .application__problem__chart {
+    gap: 2rem;
+    max-width: 58.8rem;
+  }
+
+  .application__problem__chart__legend__item {
+    &::after {
+      content: none;
+    }
+  }
+  
+  .application__problem__chart__img {
+    flex: 0 1 auto;
+    --problem-chart-size: 28rem;
+  }
+
   .application__therapist__wrapper {
     flex-direction: column;
     align-items: center;
@@ -503,6 +673,52 @@
       font-size: 1.1rem;
       line-height: 1.6rem;
     }
+  }
+
+  .application__problem__wrapper {
+    max-width: 34rem;
+    margin: 0 auto 10rem;
+  }
+  
+  .application__problem__text {
+    max-width: none;
+    margin-bottom: 4.8rem;
+  
+    h2 {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .application__problem__chart {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
+  }
+
+  .application__problem__chart__legend {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.6rem;
+  }
+
+  .application__problem__chart__legend__item {
+    text-align: center;
+
+    &:not(:last-of-type) {
+      margin-bottom: 0;
+    }
+
+    span {
+      font-size: 1.6rem;
+      line-height: 2.3rem;
+    }
+  }
+
+  .application__problem__chart__img {
+    --problem-chart-size: 100%;
   }
 
   .application__therapist__wrapper {

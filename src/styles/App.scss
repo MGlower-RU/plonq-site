@@ -67,7 +67,8 @@ a {
     transition: color .24s ease-in-out;
 
     &.active,
-    &:hover {
+    &:hover,
+    &:focus {
       color: rgb(200, 187, 147);
       transition: color .24s ease-in-out;
     }
@@ -167,7 +168,7 @@ a {
     transition: all .24s ease-in-out;
 
     &:hover,
-    &:focus{
+    &:focus {
       border-color: #000000;
       transition: all .24s ease-in-out;
     }
@@ -186,7 +187,8 @@ a {
     cursor: pointer;
     transition: background-color .24s ease-in-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: rgba(0, 0, 0, .8);
       transition: background-color .24s ease-in-out;
     }
@@ -278,7 +280,8 @@ a {
         color: rgb(170, 170, 170);
         transition: color .24s ease-in-out;
 
-        &:hover {
+        &:hover,
+        &:focus {
           color: rgb(200, 187, 147);
           transition: color .24s ease-in-out;
         }
@@ -316,7 +319,8 @@ a {
     fill: rgb(238, 42, 123);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     svg {
       transition: fill .24s ease-in-out;
     }

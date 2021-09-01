@@ -6,7 +6,6 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    debug: true,
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false
@@ -147,6 +146,21 @@ i18n
             quality: 'Quality certificates'
           },
           application: {
+            problem: {
+              header: 'Problem',
+              h3: 'Studies show that worldwide there are about 1 billion smokers, 70% of them want to quit smoking, 40% actually try to do it at least once a year, but only 5% succeed.',
+              p: {
+                1: 'Why is the success rate so low? The answer is simple: existing smoking cessation methods are not effective.',
+                2: 'Most are based on medications, nicotine substitutes, or willpower. Such methods rarely help, and the frequency of relapses after them is high.',
+                3: 'Still thinking about quitting in one day?',
+                4: 'Unfortunately, practice shows that radical smoking cessation can lead not only to physical discomfort, but also to serious psychological disorders.'
+              },
+              legend: {
+                1: 'Really quit',
+                2: 'Trying to quit',
+                3: 'Want to quit'
+              }
+            },
             compare: {
               header: 'Comparison of solutions',
               chart: {
@@ -529,6 +543,21 @@ i18n
             quality: 'Сертификаты качества'
           },
           application: {
+            problem: {
+              header: 'Проблема',
+              h3: 'Исследования показывают, что во всем мире около 1 млрд курильщиков, 70% из них хотят бросить курить, 40% действительно пытаются это сделать хотя бы раз в год, но достигают успеха только 5%.',
+              p: {
+                1: 'Почему показатель успеха такой низкий? Ответ прост: существующие методы отказа от курения — не эффективны.',
+                2: 'Большинство из них основано на медикаментах, заменителях никотина или силе воли. Такие методы редко помогают, а частота рецидивов после них высока.',
+                3: 'Все еще думаете бросить за один день?',
+                4: 'К сожалению, практика показывает, что радикальный отказ от курения может привести не только к физическому дискомфорту, но и к серьезным психологическим расстройствам.'
+              },
+              legend: {
+                1: 'Действительно бросают',
+                2: 'Пытаются бросить',
+                3: 'Хотят бросить'
+              }
+            },
             compare: {
               header: 'Сравнение решений',
               chart: {

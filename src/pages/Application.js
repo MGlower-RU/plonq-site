@@ -12,6 +12,7 @@ import AppPhone from '../images/application_app_2.png';
 import PlonqUpdate from '../images/application_phone_update.png';
 import PairingPhone from '../images/application_header.png';
 import workingAI from '../images/application_working_ai.png';
+import CircleChart from '../images/application_circle_layered_diagram.svg';
 
 export default function Application() {
   const {t} = useContext(PageContext);
@@ -38,6 +39,53 @@ export default function Application() {
           <img src={PairingPhone} alt="" />
         </div>
       </MediaQuery>
+      <div className="application__problem__wrapper">
+        <div className="application__problem__text">
+          <h2>
+            {t('application.problem.header')}
+          </h2>
+          <h3>
+            {t('application.problem.h3')}
+          </h3>
+          <p>
+            {t('application.problem.p.1')}
+          </p>
+          <p>
+            {t('application.problem.p.2')}
+          </p>
+          <p>
+            {t('application.problem.p.3')}
+          </p>
+          <p>
+            {t('application.problem.p.4')}
+          </p>
+        </div>
+        <div className="application__problem__chart">
+          <div className="application__problem__chart__legend">
+            <div className="application__problem__chart__legend__item">
+              <span>5%</span>
+              <p>
+                {t('application.problem.legend.1')}
+              </p>
+            </div>
+            <div className="application__problem__chart__legend__item">
+              <span>40%</span>
+              <p>
+                {t('application.problem.legend.2')}
+              </p>
+            </div>
+            <div className="application__problem__chart__legend__item">
+              <span>70%</span>
+              <p>
+                {t('application.problem.legend.3')}
+              </p>
+            </div>
+          </div>
+          <div className="application__problem__chart__img">
+            <img src={CircleChart} alt="" />
+          </div>
+        </div>
+      </div>
       <div className="application__compare__wrapper">
         <h2>
           {t('application.compare.header')}

@@ -63,7 +63,11 @@ export default function Footer() {
         </div>
         <div className="footer__general">
           <div className="footer__apps">
-            <a href='/'>
+            <a
+              href='https://www.apple.com/app-store/'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img src={Appstore} alt="" />
               <div className="footer__app__text">
                 <div className="footer__app__title">
@@ -74,7 +78,11 @@ export default function Footer() {
                 </div>
               </div>
             </a>
-            <a href='/'>
+            <a
+              href='https://play.google.com/store'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img src={PlayMarket} alt="" />
               <div className="footer__app__text">
                 <div className="footer__app__title">
@@ -159,10 +167,10 @@ export default function Footer() {
           </div>
           <div className="footer__copyright">
             <div className="footer__socials">
-              <a href='/' className="footer__social">
+              <a href='https://twitter.com/' className="footer__social">
                 <Twitter viewBox='2 2 20 20' />
               </a>
-              <a href='/' className="footer__social">
+              <a href='https://instagram.com/' className="footer__social">
                 <Instagram viewBox='2 2 20 20' />
               </a>
             </div>
@@ -221,7 +229,10 @@ export default function Footer() {
         </div>
         <div className="footer__general">
           <div className="footer__apps">
-            <a href='/'>
+            <a href='https://www.apple.com/app-store/'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img src={Appstore} alt="" />
               <div className="footer__app__text">
                 <div className="footer__app__title">
@@ -232,7 +243,11 @@ export default function Footer() {
                 </div>
               </div>
             </a>
-            <a href='/'>
+            <a
+              href='https://play.google.com/store'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img src={PlayMarket} alt="" />
               <div className="footer__app__text">
                 <div className="footer__app__title">
@@ -316,10 +331,10 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer__socials">
-            <a href='/' className="footer__social">
+            <a href='https://twitter.com/' className="footer__social">
               <Twitter viewBox='2 2 20 20' />
             </a>
-            <a href='/' className="footer__social">
+            <a href='https://instagram.com/' className="footer__social">
               <Instagram viewBox='2 2 20 20' />
             </a>
           </div>
@@ -447,7 +462,10 @@ export default function Footer() {
         </div>
         <div className="footer__general">
           <div className="footer__apps">
-            <a href='/'>
+            <a href='https://www.apple.com/app-store/'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img src={Appstore} alt="" />
               <div className="footer__app__text">
                 <div className="footer__app__title">
@@ -458,7 +476,11 @@ export default function Footer() {
                 </div>
               </div>
             </a>
-            <a href='/'>
+            <a
+              href='https://play.google.com/store'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img src={PlayMarket} alt="" />
               <div className="footer__app__text">
                 <div className="footer__app__title">
@@ -472,10 +494,10 @@ export default function Footer() {
           </div>
           <div className="footer__copyright">
             <div className="footer__socials">
-              <a href='/' className="footer__social">
+              <a href='https://twitter.com/' className="footer__social">
                 <Twitter viewBox='2 2 20 20' />
               </a>
-              <a href='/' className="footer__social">
+              <a href='https://instagram.com/' className="footer__social">
                 <Instagram viewBox='2 2 20 20' />
               </a>
             </div>
@@ -587,7 +609,10 @@ export default function Footer() {
         </div>
         <div className="footer__general">
           <div className="footer__apps">
-            <a href='/'>
+            <a href='https://www.apple.com/app-store/'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img src={Appstore} alt="" />
               <div className="footer__app__text">
                 <div className="footer__app__title">
@@ -598,7 +623,11 @@ export default function Footer() {
                 </div>
               </div>
             </a>
-            <a href='/'>
+            <a
+              href='https://play.google.com/store'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img src={PlayMarket} alt="" />
               <div className="footer__app__text">
                 <div className="footer__app__title">
@@ -612,10 +641,10 @@ export default function Footer() {
           </div>
           <div className="footer__copyright">
             <div className="footer__socials">
-              <a href='/' className="footer__social">
+              <a href='https://twitter.com/' className="footer__social">
                 <Twitter viewBox='2 2 20 20' />
               </a>
-              <a href='/' className="footer__social">
+              <a href='https://instagram.com/' className="footer__social">
                 <Instagram viewBox='2 2 20 20' />
               </a>
             </div>
