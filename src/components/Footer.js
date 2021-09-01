@@ -662,6 +662,7 @@ function SubscriptionForm() {
         method="POST"
         data-netlify="true"
       >
+        <input type="hidden" name="form-name" value="emailSubscription" />
         <input type="email" name='email' id="emailInput" />
         <button type="submit">
           {t('footer.emailSubscription.button')}
