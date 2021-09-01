@@ -36,17 +36,7 @@ export default function Footer() {
           <NavLink to='/' className="footer__logo">
             <img src={Logo} alt="" />
           </NavLink>
-          <div className="footer__email__subscription">
-            <div className="footer__email__subscription__text">
-              {t('footer.emailSubscription.p')}
-            </div>
-            <form className='footer__email__subscription__form'>
-              <input type="email" name="subEmail" id="emailInput" />
-              <button type="submit">
-                {t('footer.emailSubscription.button')}
-              </button>
-            </form>
-          </div>
+          <SubscriptionForm />
           <div className="footer__localization">
             {lngs.map(lng => {
               return (
@@ -202,17 +192,7 @@ export default function Footer() {
           <NavLink to='/' className="footer__logo">
             <img src={Logo} alt="" />
           </NavLink>
-          <div className="footer__email__subscription">
-            <div className="footer__email__subscription__text">
-              {t('footer.emailSubscription.p')}
-            </div>
-            <form className='footer__email__subscription__form'>
-              <input type="email" name="subEmail" id="emailInput" />
-              <button type="submit">
-                {t('footer.emailSubscription.button')}
-              </button>
-            </form>
-          </div>
+          <SubscriptionForm />
           <div className="footer__localization">
             {lngs.map(lng => {
               return (
@@ -364,17 +344,7 @@ export default function Footer() {
       </MediaQuery>
       <MediaQuery minWidth={581} maxWidth={960}>
         <div className="footer__features">
-          <div className="footer__email__subscription">
-            <div className="footer__email__subscription__text">
-              {t('footer.emailSubscription.p')}
-            </div>
-            <form className='footer__email__subscription__form'>
-              <input type="email" name="subEmail" id="emailInput" />
-              <button type="submit">
-                {t('footer.emailSubscription.button')}
-              </button>
-            </form>
-          </div>
+          <SubscriptionForm />
           <div className="footer__localization">
             {lngs.map(lng => {
               return (
@@ -525,17 +495,7 @@ export default function Footer() {
         </div>
       </MediaQuery>
       <MediaQuery maxWidth={580}>
-        <div className="footer__email__subscription">
-          <div className="footer__email__subscription__text">
-            {t('footer.emailSubscription.p')}
-          </div>
-          <form className='footer__email__subscription__form'>
-            <input type="email" name="subEmail" id="emailInput" />
-            <button type="submit">
-              {t('footer.emailSubscription.button')}
-            </button>
-          </form>
-        </div>
+        <SubscriptionForm />
         <div className="footer__nav">
           <ul className="footer__nav__list">
             <li>
@@ -685,5 +645,28 @@ export default function Footer() {
         </div>
       </MediaQuery>
     </footer>
+  )
+}
+
+function SubscriptionForm() {
+  const {t} = useContext(PageContext)
+
+  return (
+    <div className="footer__email__subscription">
+      <div className="footer__email__subscription__text">
+        {t('footer.emailSubscription.p')}
+      </div>
+      <form
+        className='footer__email__subscription__form'
+        name='emailSubscription'
+        method="POST"
+        data-netlify="true"
+      >
+        <input type="email" name='email' id="emailInput" />
+        <button type="submit">
+          {t('footer.emailSubscription.button')}
+        </button>
+      </form>
+    </div>
   )
 }
