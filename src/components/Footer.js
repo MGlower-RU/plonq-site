@@ -4,7 +4,7 @@ import MediaQuery from 'react-responsive';
 import { NavLink } from 'react-router-dom';
 import { PageContext } from './Context';
 import { Alert } from '@material-ui/lab';
-import { Fade, Slide } from '@material-ui/core';
+import { Slide } from '@material-ui/core';
 
 import Logo from '../images/logo.svg';
 import Appstore from '../images/appstore.svg';
