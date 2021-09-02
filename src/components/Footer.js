@@ -681,6 +681,9 @@ function SubscriptionForm() {
       setEmailValue('')
       setIsFormValid(true)
       setFormSubmissionAlert(true)
+      setTimeout(() => {
+        setFormSubmissionAlert(false)
+      }, 4000)
     })
     .catch(error => alert(error))
     event.preventDefault()
@@ -689,9 +692,15 @@ function SubscriptionForm() {
   return (
     <div className="footer__email__subscription">
       {formSubmissionAlert &&
-        <Slide direction="up" in={formSubmissionAlert} timeout={1000}>
+        <Slide
+          direction="up"
+          in={formSubmissionAlert}
+          timeout={500}
+          mountOnEnter
+          unmountOnExit
+         >
           <Alert severity="success" onClose={() => setFormSubmissionAlert(false)}>
-            This is an info alert — check it out!
+            You had subscribed to the newsletter
           </Alert>
         </Slide>
       }

@@ -193,6 +193,15 @@
     margin-left: 0;
   }
 
+  .MuiAlert-root {
+    bottom: 3rem;
+    right: 4rem;
+  }
+  
+  .MuiAlert-message {
+    font-size: 1.4rem;
+  }
+
   .footer__email__subscription {
     display: flex;
     align-items: center;
@@ -350,7 +359,19 @@
 
 @media(max-width: 580px) {
   body {
-    --padding: 0 6rem;
+    --padding: 0 5.2rem;
+  }
+
+  .MuiAlert-root {
+    width: 100%;
+    height: 6rem;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  
+  .MuiAlert-message {
+    font-size: 1.1rem;
   }
 
   .footer__email__subscription {

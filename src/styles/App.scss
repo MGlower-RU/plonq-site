@@ -132,6 +132,11 @@ a {
   bottom: 2rem;
   right: 10rem;
   align-items: center;
+  z-index: 10;
+}
+
+.MuiAlert-message {
+  font-size: 1.8rem;
 }
 
 .footer {
