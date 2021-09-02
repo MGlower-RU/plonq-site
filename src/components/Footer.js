@@ -679,6 +679,7 @@ function SubscriptionForm() {
     })
     .then(() => {
       setEmailValue('')
+      setIsFormValid(true)
       setFormSubmissionAlert(true)
     })
     .catch(error => alert(error))

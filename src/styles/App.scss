@@ -127,6 +127,13 @@ a {
   }
 }
 
+.MuiAlert-root {
+  position: fixed;
+  bottom: 2rem;
+  right: 10rem;
+  align-items: center;
+}
+
 .footer {
   margin-top: auto;
   padding: var(--padding);
