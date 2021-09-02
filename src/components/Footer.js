@@ -3,6 +3,8 @@ import React, { useContext, useState } from 'react';
 import MediaQuery from 'react-responsive';
 import { NavLink } from 'react-router-dom';
 import { PageContext } from './Context';
+import { Alert } from '@material-ui/lab';
+import { Fade, Slide } from '@material-ui/core';
 
 import Logo from '../images/logo.svg';
 import Appstore from '../images/appstore.svg';
@@ -651,8 +653,9 @@ export default function Footer() {
 function SubscriptionForm() {
   const {t} = useContext(PageContext)
 
-  const [emailValue, setEmailValue] = useState('');
+  const [emailValue, setEmailValue] = useState('')
   const [isFormValid, setIsFormValid] = useState(true)
+  const [formSubmissionAlert, setFormSubmissionAlert] = useState(false)
 
   function isEmailValid(e) {
     setEmailValue(e.target.value);
@@ -674,13 +677,23 @@ function SubscriptionForm() {
         "email": emailValue
       })
     })
-    .then(() => alert("Success!"))
+    .then(() => {
+      setEmailValue('')
+      setFormSubmissionAlert(true)
+    })
     .catch(error => alert(error))
     event.preventDefault()
   }
 
   return (
     <div className="footer__email__subscription">
+      {formSubmissionAlert &&
+        <Slide direction="up" in={formSubmissionAlert} timeout={1000}>
+          <Alert severity="success" onClose={() => setFormSubmissionAlert(false)}>
+            This is an info alert — check it out!
+          </Alert>
+        </Slide>
+      }
       <div className="footer__email__subscription__text">
         {t('footer.emailSubscription.p')}
       </div>
