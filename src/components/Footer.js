@@ -668,8 +668,8 @@ function SubscriptionForm() {
         className='footer__email__subscription__form'
         name='emailSubscription'
         method="POST"
-        action=''
         data-netlify="true"
+        onSubmit={e => e.preventDefault()}
       >
         <input type="hidden" name="form-name" value="emailSubscription" />
         <input
