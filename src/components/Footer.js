@@ -669,7 +669,6 @@ function SubscriptionForm() {
         name='emailSubscription'
         method="POST"
         action='/products'
-        onSubmit={() => setEmailValue('')}
         data-netlify="true"
       >
         <input type="hidden" name="form-name" value="emailSubscription" />
