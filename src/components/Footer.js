@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import MediaQuery from 'react-responsive';
 import { NavLink } from 'react-router-dom';
@@ -651,6 +651,14 @@ export default function Footer() {
 function SubscriptionForm() {
   const {t} = useContext(PageContext)
 
+  const [emailValue, setEmailValue] = useState('');
+  const [isFormValid, setIsFormValid] = useState(true)
+
+  function isEmailValid(e) {
+    setEmailValue(e.target.value);
+    (e.target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) === null) ? setIsFormValid(true) : setIsFormValid(false);
+  }
+
   return (
     <div className="footer__email__subscription">
       <div className="footer__email__subscription__text">
@@ -661,11 +669,17 @@ function SubscriptionForm() {
         name='emailSubscription'
         method="POST"
         action='/products'
+        onSubmit={() => setEmailValue('')}
         data-netlify="true"
       >
         <input type="hidden" name="form-name" value="emailSubscription" />
-        <input type="email" name='email' id="emailInput" />
-        <button type="submit">
+        <input
+          type="text"
+          name='email'
+          id="emailInput"
+          value={emailValue}
+          onChange={isEmailValid} />
+        <button type="submit" disabled={isFormValid}>
           {t('footer.emailSubscription.button')}
         </button>
       </form>
