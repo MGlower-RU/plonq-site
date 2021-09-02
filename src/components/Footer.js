@@ -668,7 +668,7 @@ function SubscriptionForm() {
         className='footer__email__subscription__form'
         name='emailSubscription'
         method="POST"
-        action='/products'
+        action=''
         data-netlify="true"
       >
         <input type="hidden" name="form-name" value="emailSubscription" />
