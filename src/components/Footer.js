@@ -700,7 +700,7 @@ function SubscriptionForm() {
           unmountOnExit
          >
           <Alert severity="success" onClose={() => setFormSubmissionAlert(false)}>
-            You had subscribed to the newsletter
+            {t('footer.emailSubscription.alert')}
           </Alert>
         </Slide>
       }

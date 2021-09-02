@@ -375,7 +375,8 @@ i18n
           footer: {
             emailSubscription: {
               p: 'Subscribe to our updates',
-              button: 'Subscribe'
+              button: 'Subscribe',
+              alert: 'You subscribed to the newsletter'
             },
             nav: {
               products: {
@@ -772,7 +773,8 @@ i18n
           footer: {
             emailSubscription: {
               p: 'Подпишитесь на наши обновления',
-              button: 'Подписаться'
+              button: 'Подписаться',
+              alert: 'Вы подписались на рассылку'
             },
             nav: {
               products: {
