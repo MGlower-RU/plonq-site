@@ -659,6 +659,10 @@ function SubscriptionForm() {
     (e.target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) === null) ? setIsFormValid(true) : setIsFormValid(false);
   }
 
+  async function preventRedirect(e) {
+    e.preventDefault()
+  }
+
   return (
     <div className="footer__email__subscription">
       <div className="footer__email__subscription__text">
@@ -669,7 +673,7 @@ function SubscriptionForm() {
         name='emailSubscription'
         method="POST"
         data-netlify="true"
-        onSubmit={e => e.preventDefault()}
+        onSubmit={preventRedirect}
       >
         <input type="hidden" name="form-name" value="emailSubscription" />
         <input
