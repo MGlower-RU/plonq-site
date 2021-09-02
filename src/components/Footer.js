@@ -659,6 +659,26 @@ function SubscriptionForm() {
     (e.target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) === null) ? setIsFormValid(true) : setIsFormValid(false);
   }
 
+  function encode(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const handleSubmit = (event) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": event.target.getAttribute("name"),
+        "email": emailValue
+      })
+    })
+    .then(() => alert("Success!"))
+    .catch(error => alert(error))
+    event.preventDefault()
+  }
+
   return (
     <div className="footer__email__subscription">
       <div className="footer__email__subscription__text">
@@ -669,6 +689,7 @@ function SubscriptionForm() {
         name='emailSubscription'
         method="POST"
         data-netlify="true"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="emailSubscription" />
         <input
