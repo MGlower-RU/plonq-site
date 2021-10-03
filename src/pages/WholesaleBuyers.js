@@ -36,7 +36,7 @@ export default function WholesaleBuyers() {
           {t('wholesaleBuyers.p.2')}
         </p>
       </div>
-      <ContactForm />
+      <ContactForm formName='wholesaleBuyers' />
     </div>
   )
 }
