@@ -58,7 +58,7 @@ export default function ContactForm({formName}) {
       body: encode({
         "form-name": event.target.getAttribute("name"),
         "name": formValues.name,
-        "phone": formValues.phone,
+        "tel": formValues.phone,
         "email": formValues.email,
         "msg": formValues.message
       })
@@ -87,7 +87,7 @@ export default function ContactForm({formName}) {
         type="text"
         value={formValues.name}
         onChange={isNameValid}
-        name='fullName'
+        name='name'
         placeholder={t('defaults.contactForm.placeholderName')}
         className='contact-form__input__name'
       />
