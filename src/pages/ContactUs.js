@@ -21,7 +21,7 @@ export default function ContactUs() {
           {t('contactUs.p.2')}
         </p>
       </div>
-      <ContactForm />
+      <ContactForm formName='contactUs' />
     </div>
   )
 }

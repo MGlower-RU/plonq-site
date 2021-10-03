@@ -54,6 +54,10 @@
     padding-left: 1.7rem;
     padding-right: 1.7rem;
   }
+
+  [class='contact-form__input__name'] {
+    text-transform: capitalize;
+  }
   
   button[type='submit'] {
     display: inline-flex;

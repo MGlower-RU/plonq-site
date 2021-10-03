@@ -17,14 +17,37 @@
   </head>
   <body>
     <form
-      className='footer__email__subscription__form'
       name='emailSubscription'
       method="POST"
       netlify
       netlify-honeypot="bot-field"
       hidden
     >
-      <input type="email" name='email' id="emailInput" />
+      <input type="email" name='email' />
+    </form>
+    <form
+      name='contactUs'
+      method="POST"
+      netlify
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="text" name='fullName' />
+      <input type="tel" name='tel' />
+      <input type="email" name='email' />
+      <textarea name="msg"></textarea>
+    </form>
+    <form
+      name='wholesaleBuyers'
+      method="POST"
+      netlify
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="text" name='fullName' />
+      <input type="tel" name='tel' />
+      <input type="email" name='email' />
+      <textarea name="msg"></textarea>
     </form>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
