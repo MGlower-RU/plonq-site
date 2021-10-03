@@ -64,8 +64,8 @@ export default function ContactForm({formName}) {
       })
     })
     .then(() => {
-      for(const key in formValues) {setFormValues({...formValues, [key]: ''})}
-      for(const key in isFormValid) {setIsFormValid({...formValues, [key]: false})}
+      setFormValues({name: '', phone: '', email: '', message: ''})
+      setIsFormValid({name: false, phone: false, email: false, message: false})
     })
     .catch(error => alert(error))
     event.preventDefault()
